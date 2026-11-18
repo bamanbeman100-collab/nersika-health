@@ -1,0 +1,1366 @@
+# MASTER BUILD PROMPT — NERSIKA HEALTH
+## Enterprise-Grade Bilingual Healthcare Intelligence Platform
+
+You are acting as a complete senior software engineering team consisting of:
+
+- Principal Software Architect
+- Senior Full-Stack Developer
+- Healthcare Product Designer
+- Clinical Informatics Specialist
+- AI Engineer
+- Database Architect
+- Cybersecurity Engineer
+- QA Automation Engineer
+- UX/UI Designer
+- DevOps Engineer
+
+Your mission is to DESIGN, BUILD, IMPLEMENT, TEST, and DOCUMENT a professional healthcare technology platform named:
+
+**NERSIKA HEALTH**
+
+Product description:
+Intelligent Clinical Decision & Medication Safety Platform.
+
+Tagline:
+Every Patient. One Intelligent Health Record.
+
+Persian tagline:
+هر بیمار، یک پرونده سلامت هوشمند و یکپارچه
+
+This must be a real, functional, responsive web application, not just a visual mockup, static dashboard, landing page, or collection of disconnected screens.
+
+Build a complete and scalable application with real authentication, database integration, role-based access control, patient records, clinical workflows, dashboards, and AI-assisted features.
+
+The platform must support Persian and English as first-class languages.
+
+==================================================
+1. CORE PRODUCT VISION
+==================================================
+
+NERSIKA HEALTH is a longitudinal health-intelligence platform that helps patients, caregivers, physicians, clinical pharmacists, nurses, healthcare organizations, laboratories, and pharmacies work with reliable, structured, traceable health information.
+
+The platform must:
+
+1. Create a unified longitudinal patient health record.
+2. Collect and organize medical history.
+3. Track medications and medication history.
+4. Identify medication allergies and intolerances.
+5. Support medication reconciliation.
+6. Detect clinically relevant drug interactions using validated rules.
+7. Organize laboratory results and trends.
+8. Present source-aware clinical information.
+9. Support clinician-supervised clinical decision-making.
+10. Provide AI-assisted medical information summarization.
+11. Identify missing, conflicting, outdated, or uncertain data.
+12. Maintain a secure audit trail.
+13. Support different patient populations, including newborns, children, adults, older adults, and pregnancy-related workflows.
+14. Provide a foundation for future integration with hospitals, laboratories, pharmacies, and healthcare organizations.
+
+IMPORTANT CLINICAL SAFETY RULE:
+
+NERSIKA HEALTH IS NOT AN AUTONOMOUS DOCTOR.
+
+AI recommendations are NOT medical orders.
+
+AI must never independently prescribe medications, authorize treatment, generate unsupported diagnoses, or independently calculate patient-specific doses.
+
+All high-risk clinical decisions must be reviewed and approved by an appropriately authorized healthcare professional.
+
+If critical information is missing, the system must explicitly indicate that it cannot safely provide a conclusion.
+
+==================================================
+2. TECHNOLOGY STACK
+==================================================
+
+Build using a modern, maintainable architecture.
+
+Frontend:
+- React
+- TypeScript
+- Next.js where supported by the environment
+- Tailwind CSS
+- Accessible reusable components
+- Responsive desktop, tablet, and mobile layouts
+- Lucide icons
+- Reusable design system
+
+Backend:
+- Secure REST API
+- TypeScript or Python services
+- Server-side validation
+- Role-based authorization
+- Structured error handling
+- API versioning
+
+Database:
+- PostgreSQL for production clinical data
+- Firebase Firestore may be used for a prototype if the environment requires Firebase.
+- Define clear data models and relationships.
+- Never store passwords in plain text.
+
+Authentication:
+- Firebase Authentication with email and password, or an equivalent secure authentication provider.
+- Email verification.
+- Password reset through email.
+- Secure session management.
+- Protected routes.
+- Role-based access.
+- Multi-factor authentication support for privileged and clinical accounts.
+
+Storage:
+- Secure medical document storage.
+- Private file access.
+- File type and size validation.
+- Access-controlled downloads.
+
+AI:
+- Integrate Gemini through secure server-side API calls.
+- Never expose Gemini API keys in frontend code.
+- Use structured outputs and schema validation.
+- Separate AI assistance from deterministic clinical rules.
+
+Architecture:
+Start with a modular monolith with clear domain boundaries and API-first design.
+
+Prepare the architecture for future independent services.
+
+Do not introduce unnecessary microservices in the initial MVP.
+
+==================================================
+3. BILINGUAL EXPERIENCE — PERSIAN & ENGLISH
+==================================================
+
+The application must be fully bilingual.
+
+Supported languages:
+1. Persian (fa-IR)
+2. English (en-US)
+
+Create a language selector visible on authentication pages and inside the application settings.
+
+Persian requirements:
+- Complete RTL layout.
+- Correct Persian typography.
+- Correct alignment of forms, tables, cards, menus, and navigation.
+- Persian translations for all UI labels, validation messages, buttons, alerts, notifications, and empty states.
+- Support Persian numerals where appropriate.
+- Use a consistent Persian font such as Vazirmatn.
+
+English requirements:
+- Complete LTR layout.
+- Professional English typography.
+- Correct alignment and navigation.
+- Native-quality English content.
+
+CRITICAL:
+
+Do not implement Persian as a superficial translation of a few headings.
+
+Every page, every dialog, every validation message, every notification, every form, and every system status must support both languages.
+
+Switching languages must update the entire application without losing user data or navigation state.
+
+Keep translations in structured locale files.
+
+Use the correct locale for dates and number formatting.
+
+Use Jalali calendar support for Persian where appropriate, and Gregorian calendar support for English.
+
+Store timestamps in a consistent backend format, preferably UTC.
+
+==================================================
+4. BRAND IDENTITY & VISUAL DESIGN
+==================================================
+
+Create an elegant, premium, modern medical technology identity.
+
+Brand:
+NERSIKA HEALTH
+
+Visual direction:
+- Premium healthcare SaaS
+- Modern clinical intelligence
+- Minimalist and trustworthy
+- Enterprise-grade
+- Professional rather than playful
+- Clear information hierarchy
+- Comfortable whitespace
+- High readability
+- Consistent spacing and typography
+
+Color system:
+
+Primary navy: #102A43
+Secondary navy: #183B56
+Medical teal: #168C9A
+Light teal: #E7F5F5
+Background: #F5F8FA
+Surface: #FFFFFF
+Text primary: #182B3A
+Text secondary: #667788
+Success: #21865B
+Warning: #D99A28
+Critical: #D64545
+Information: #367FC5
+
+Use colors consistently.
+
+Create:
+- Professional wordmark for NERSIKA HEALTH.
+- Minimal medical technology logo concept.
+- Favicon.
+- Consistent iconography.
+- Light theme.
+- Optional dark theme.
+- Subtle animations.
+- Smooth transitions.
+- Loading skeletons.
+- Clear empty states.
+- Accessible focus indicators.
+
+Do not use excessive gradients, distracting animations, or generic medical stock imagery.
+
+==================================================
+5. AUTHENTICATION & ACCOUNT MANAGEMENT
+==================================================
+
+Create a complete authentication system.
+
+A. Login page
+
+Fields:
+- Email address
+- Password
+- Show/hide password
+- Remember me
+- Forgot password
+- Sign in button
+
+B. Registration page
+
+Fields:
+- First name
+- Last name
+- Email
+- Password
+- Confirm password
+- Country
+- Preferred language
+- Account type
+- Terms and privacy consent
+
+C. Email verification
+
+After registration:
+- Send a verification email.
+- Display verification status.
+- Prevent access to protected features until verification is complete.
+- Allow users to request another verification email.
+
+D. Password reset
+
+- User enters email.
+- Send a secure reset link.
+- Validate reset tokens.
+- Allow password replacement.
+- Show success and failure states.
+
+E. Account security
+
+- Secure sessions.
+- Rate limiting.
+- Brute-force protection.
+- Password strength requirements.
+- Session expiration.
+- Logout from current session.
+- Support MFA for clinical and administrative roles.
+
+Do not create a fake authentication interface.
+
+Authentication must be connected to a real authentication service.
+
+Do not provide public self-registration for physician, pharmacist, or administrator privileges. Such roles require verification and authorization.
+
+==================================================
+6. USER ROLES & PERMISSIONS
+==================================================
+
+Implement the following roles:
+
+1. PATIENT
+2. CAREGIVER
+3. PHYSICIAN
+4. CLINICAL_PHARMACIST
+5. NURSE
+6. HEALTHCARE_COORDINATOR
+7. ORGANIZATION_ADMIN
+8. SYSTEM_ADMIN
+
+Each role must have its own dashboard and permitted actions.
+
+PATIENT:
+- View own medical record.
+- View allergies.
+- View medication list.
+- Report medications actually being used.
+- Upload medical documents.
+- Enter symptoms.
+- View laboratory reports.
+- View care plans.
+- Manage consent.
+- Manage personal profile.
+- Request access to records.
+
+CAREGIVER:
+- Access authorized patient records.
+- Report health information.
+- Upload documents.
+- Manage permitted care activities.
+- Never bypass patient consent or authorization requirements.
+
+PHYSICIAN:
+- View authorized patients.
+- Review patient timeline.
+- Review diagnoses.
+- Review medication history.
+- Review allergies.
+- Review laboratory results.
+- Review clinical alerts.
+- Review AI-generated summaries.
+- Accept, modify, defer, or reject suggestions.
+- Record the clinical rationale.
+- Create and manage care plans.
+- Document encounters.
+
+CLINICAL PHARMACIST:
+- Review medication reconciliation.
+- Inspect drug interactions.
+- Review contraindications.
+- Review duplicate therapies.
+- Review dose-related warnings where validated.
+- Document medication safety findings.
+
+NURSE:
+- Record observations.
+- Record vital signs.
+- Review authorized care plans.
+- Record medication administration where authorized.
+- Escalate important alerts.
+
+HEALTHCARE COORDINATOR:
+- Coordinate follow-up.
+- Manage appointments and care tasks.
+- Track unresolved administrative workflows.
+
+ORGANIZATION ADMIN:
+- Manage organization users.
+- Manage permissions.
+- View operational metrics.
+- Review audit reports.
+- Configure organization settings.
+
+SYSTEM ADMIN:
+- Manage platform configuration.
+- Manage organizations.
+- Review security events.
+- Manage verified roles.
+- Configure feature availability.
+- Monitor platform health.
+
+IMPORTANT:
+
+Use role-based and context-based access control.
+
+A role alone must not grant unrestricted access to every patient record.
+
+Check organization, relationship to the patient, consent, legal basis, purpose, and permitted action.
+
+==================================================
+7. MAIN APPLICATION NAVIGATION
+==================================================
+
+Create a professional navigation system.
+
+Main modules:
+
+1. Dashboard
+2. Patients
+3. Medical Records
+4. Medication History
+5. Medication Safety
+6. Allergies
+7. Laboratory Intelligence
+8. Clinical Decision Support
+9. Care Plans
+10. Appointments and Follow-up
+11. Medical Documents
+12. Notifications
+13. Reports and Analytics
+14. User Management
+15. Audit Logs
+16. Settings
+17. Help and Support
+
+Navigation must adapt according to the user's role.
+
+Use:
+- Sidebar navigation on desktop.
+- Responsive navigation on mobile.
+- Breadcrumbs.
+- Global search with permission filtering.
+- Notification center.
+- User profile menu.
+- Language selector.
+
+==================================================
+8. PATIENT DASHBOARD
+==================================================
+
+Create a complete patient dashboard.
+
+Header:
+- Welcome message.
+- Patient name.
+- Profile completion.
+- Notification center.
+- Language selector.
+
+Summary cards:
+- Active conditions.
+- Current medications.
+- Known allergies.
+- Recent laboratory results.
+- Upcoming appointments.
+- Outstanding care tasks.
+
+Dashboard sections:
+
+A. Health overview
+B. Recent medical activity
+C. Medication overview
+D. Allergy overview
+E. Laboratory trends
+F. Upcoming appointments
+G. Recent documents
+H. Care plan progress
+
+Patient actions:
+- Add a health observation.
+- Report a medication.
+- Upload a medical document.
+- Add an allergy report.
+- View medical history.
+- Update personal information.
+
+Make it easy for non-technical patients to use.
+
+==================================================
+9. LONGITUDINAL HEALTH RECORD
+==================================================
+
+Build a complete longitudinal health record.
+
+Patient profile:
+
+- Unique patient identifier.
+- First and last name.
+- Date of birth.
+- Sex as clinically recorded where relevant.
+- Contact information.
+- Emergency contact.
+- Relevant demographic information.
+- Patient status.
+- Verified identity status.
+
+Clinical sections:
+
+1. Medical conditions.
+2. Diagnoses.
+3. Previous encounters.
+4. Hospital admissions.
+5. Procedures.
+6. Immunizations.
+7. Medication history.
+8. Allergies and intolerances.
+9. Laboratory results.
+10. Vital signs.
+11. Family medical history.
+12. Previous adverse events.
+13. Care plans.
+14. Medical reports.
+15. Clinical notes.
+
+Create a chronological health timeline.
+
+Every record must show:
+- Event date.
+- Entry date.
+- Source.
+- Verification status.
+- Responsible author or organization.
+- Relevant notes.
+
+Distinguish clearly between:
+
+- Patient reported.
+- Organization sourced.
+- Clinician verified.
+- Document extracted.
+- Needs review.
+- AI inferred.
+
+Never silently convert unverified patient-reported information into verified clinical facts.
+
+==================================================
+10. MEDICATION HISTORY INTELLIGENCE
+==================================================
+
+Create a comprehensive medication management module.
+
+Represent different medication states:
+
+- Prescribed.
+- Dispensed.
+- Administered.
+- Patient reported.
+- Discontinued.
+- Uncertain.
+
+Medication record fields:
+
+- Medication name.
+- Generic name.
+- Brand name.
+- Active ingredient.
+- Strength.
+- Formulation.
+- Dosage form.
+- Route.
+- Frequency.
+- Start date.
+- End date.
+- Prescriber.
+- Source.
+- Verification status.
+- Current status.
+- Notes.
+
+Support medication reconciliation.
+
+IMPORTANT PRINCIPLE:
+
+A prescription does not prove that a medication was dispensed.
+
+Dispensing does not prove administration.
+
+Hospital administration does not prove continued use after discharge.
+
+Keep these states separate and traceable.
+
+Show discrepancies and ask an authorized professional to review them.
+
+==================================================
+11. MEDICATION SAFETY ENGINE
+==================================================
+
+Create a medication safety module with the following categories:
+
+1. Drug allergies.
+2. Drug intolerances.
+3. Drug-drug interactions.
+4. Therapeutic duplication.
+5. Contraindications.
+6. Age-related safety considerations.
+7. Weight-related safety considerations.
+8. Renal function considerations.
+9. Hepatic function considerations.
+10. Pregnancy-related considerations.
+11. Lactation considerations.
+12. High-alert medications.
+13. Maximum-dose checks, only when validated.
+14. Medication reconciliation discrepancies.
+
+Every clinical alert must include:
+
+- Alert title.
+- Severity.
+- Explanation.
+- Data used.
+- Source.
+- Date.
+- Evidence version.
+- Clinical relevance.
+- Missing information.
+- Suggested next step.
+- Responsible reviewer.
+- Review status.
+
+Severity levels:
+
+RED — Critical:
+Potential immediate or severe harm under validated high-confidence conditions.
+
+AMBER — Significant:
+Important risk requiring timely professional review.
+
+BLUE — Informational:
+Context or monitoring reminder.
+
+Do not generate real clinical interaction alerts from invented or unverified drug knowledge.
+
+Build an extensible clinical rules interface and clearly mark any unconfigured or unvalidated rules.
+
+==================================================
+12. LABORATORY INTELLIGENCE
+==================================================
+
+Create a professional laboratory module.
+
+Support:
+
+- Test name.
+- Test code.
+- Value.
+- Unit.
+- Original laboratory unit.
+- Normalized unit.
+- Reference range.
+- Collection date.
+- Result date.
+- Laboratory name.
+- Source.
+- Verification status.
+
+Display:
+- Laboratory history.
+- Trend charts.
+- Reference ranges.
+- Abnormal flags.
+- Historical comparisons.
+- Missing data.
+- Unit conversion history.
+
+Do not compare results from different units without validated normalization.
+
+Do not assume that a reference range applies to every age group, pregnancy status, or clinical setting.
+
+Use interactive charts for supported numerical trends.
+
+==================================================
+13. CLINICAL DECISION SUPPORT ENGINE
+==================================================
+
+Build a controlled seven-stage workflow:
+
+Stage 1: Patient Context
+Confirm patient identity, encounter, age, pregnancy status when relevant, and access authorization.
+
+Stage 2: Data Aggregation
+Collect conditions, medications, allergies, observations, and laboratory results.
+
+Stage 3: Data Quality
+Detect missing, outdated, conflicting, or implausible information.
+
+Stage 4: Risk Analysis
+Run validated deterministic clinical rules and approved models.
+
+Stage 5: Evidence Matching
+Match findings with approved, versioned clinical references.
+
+Stage 6: Recommendation
+Present clinician-facing recommendations with explanation and uncertainty.
+
+Stage 7: Decision and Monitoring
+Record acceptance, modification, deferral, rejection, and clinical outcomes.
+
+Every recommendation must display:
+
+- Clinical question.
+- Facts used.
+- Source and timestamp.
+- Risk severity.
+- Evidence source.
+- Evidence version.
+- Applicability limitations.
+- Missing information.
+- Uncertainty.
+- Suggested next step.
+- Rule or model version.
+- Responsible reviewer.
+
+Physician actions:
+
+- Accept.
+- Modify.
+- Defer.
+- Reject.
+
+Require a documented reason where appropriate.
+
+AI must never automatically execute a prescription or clinical order.
+
+==================================================
+14. GEMINI AI ASSISTANT
+==================================================
+
+Create an AI-assisted clinical information interface.
+
+Name:
+Nersika AI Clinical Assistant.
+
+Capabilities:
+
+1. Summarize authorized patient records.
+2. Extract structured information from uploaded documents.
+3. Organize patient-reported symptoms.
+4. Explain laboratory terminology.
+5. Identify missing medical information.
+6. Summarize medication history.
+7. Explain already validated clinical alerts.
+8. Search approved medical knowledge.
+9. Generate structured clinical summaries for professional review.
+10. Help healthcare professionals navigate information.
+
+AI response requirements:
+
+- Use the user's selected language.
+- Clearly identify AI-generated content.
+- Show sources whenever available.
+- Distinguish documented facts from interpretation.
+- Clearly communicate uncertainty.
+- Never fabricate citations.
+- Never invent medication doses.
+- Never independently authorize treatment.
+- Abstain when reliable information is insufficient.
+
+Use structured JSON outputs for clinical data extraction.
+
+Validate all AI outputs before saving them.
+
+Use access-controlled retrieval.
+
+Never send identifiable patient health information to an unapproved public AI service.
+
+Use synthetic patient information during development.
+
+==================================================
+15. FIFTEEN CLINICAL MODULES
+==================================================
+
+Create a modular navigation and future-ready architecture for these 15 modules:
+
+01. Longitudinal Health Record
+02. Medication History Intelligence
+03. Medication Safety
+04. Patient-Specific Dose Support
+05. Antibiotic Stewardship
+06. Diagnostic Decision Support
+07. Laboratory Intelligence
+08. Maternal & Fetal Health
+09. Neonatal Health
+10. Pediatric Health
+11. Geriatric Health
+12. Chronic Disease Management
+13. Remote Care & Follow-up
+14. Treatment Response Monitoring
+15. Prevention & Screening
+
+The first MVP must prioritize:
+
+- Patient identity and consent.
+- Core longitudinal record.
+- Medication reconciliation.
+- Allergy screening.
+- Validated interaction screening.
+- Laboratory trends.
+- Clinician review.
+- Audit logging.
+
+Advanced dosing, diagnostic suggestions, antibiotic stewardship, and specialty pathways must remain disabled or clearly labeled as future capabilities until the necessary clinical evidence, validated rules, governance, and regulatory review are in place.
+
+==================================================
+16. MEDICAL DOCUMENT MANAGEMENT
+==================================================
+
+Create secure document management.
+
+Supported document categories:
+
+- Laboratory reports.
+- Prescriptions.
+- Discharge summaries.
+- Imaging reports.
+- Medical certificates.
+- Clinical notes.
+- Referral letters.
+- Other medical documents.
+
+Features:
+
+- Secure upload.
+- Document preview.
+- Metadata.
+- Upload date.
+- Source.
+- Patient association.
+- Access permissions.
+- Review status.
+- Document classification.
+- Audit history.
+
+If OCR is used:
+- Preserve the original file.
+- Mark extracted content as document extracted.
+- Do not treat extracted information as verified until reviewed.
+
+==================================================
+17. ORGANIZATION & CLINICIAN PORTAL
+==================================================
+
+Create a professional clinician workspace.
+
+Main sections:
+
+- Patient directory.
+- Patient search.
+- Clinical encounters.
+- Medication reconciliation.
+- Allergy review.
+- Clinical alerts.
+- Laboratory review.
+- Clinical notes.
+- Care plans.
+- Follow-up tasks.
+- Audit history.
+
+Create an efficient patient review workflow.
+
+Before a clinician can access or act on a patient's record:
+- Verify identity.
+- Verify authorization.
+- Confirm the care relationship and encounter where applicable.
+- Block unresolved ambiguous patient matches.
+
+==================================================
+18. NOTIFICATIONS & TASK MANAGEMENT
+==================================================
+
+Build an internal notification system.
+
+Notification categories:
+
+- Medication review needed.
+- Allergy information updated.
+- New laboratory result.
+- Document awaiting verification.
+- Clinical recommendation awaiting review.
+- Care plan update.
+- Upcoming appointment.
+- Security notification.
+
+Provide:
+- Read/unread status.
+- Priority.
+- Timestamp.
+- Related patient or record.
+- Action link.
+- Notification preferences.
+
+Avoid repetitive alerts and alert fatigue.
+
+==================================================
+19. ADMINISTRATION & ANALYTICS
+==================================================
+
+Build a complete administrative dashboard.
+
+Metrics:
+
+- Total registered patients.
+- Active users.
+- Verified clinicians.
+- Organizations.
+- Medical records.
+- Uploaded documents.
+- Pending reviews.
+- Open clinical alerts.
+- System activity.
+- Audit events.
+
+Administrative tools:
+
+- User management.
+- Role management.
+- Organization management.
+- Account verification.
+- Access control.
+- Feature configuration.
+- Security monitoring.
+- Audit reports.
+- System settings.
+
+Do not allow administrators to bypass patient-data access controls without a separately authorized and audited procedure.
+
+==================================================
+20. DATA MODEL & INTEROPERABILITY
+==================================================
+
+Design a structured clinical data model.
+
+Prepare HL7 FHIR interoperability.
+
+Consider these FHIR resources:
+
+- Patient
+- Encounter
+- Condition
+- MedicationRequest
+- MedicationDispense
+- MedicationAdministration
+- MedicationStatement
+- AllergyIntolerance
+- Observation
+- DiagnosticReport
+- Procedure
+- Immunization
+- AdverseEvent
+- FamilyMemberHistory
+- CarePlan
+- ClinicalImpression
+- Consent
+- Provenance
+- AuditEvent
+
+Specify the FHIR release, profiles, terminology bindings, local extensions, and validation rules before production integration.
+
+Every clinical data object must preserve:
+- Original source.
+- Author or responsible organization.
+- Clinical event timestamp.
+- Entry timestamp.
+- Verification status.
+- Data quality.
+- Original and normalized units when relevant.
+- Transformation history.
+
+Do not assume automatic access to national healthcare systems.
+
+Each external connection requires legal authorization, technical agreements, security assessment, and operational approval.
+
+==================================================
+21. SECURITY, PRIVACY & GOVERNANCE
+==================================================
+
+Security is mandatory from the first release.
+
+Implement:
+
+- Strong authentication.
+- MFA for privileged and clinical access.
+- Role-based and context-based authorization.
+- Encryption in transit.
+- Encryption at rest.
+- Secure secret management.
+- Session management.
+- Rate limiting.
+- Input validation.
+- CSRF protection where applicable.
+- XSS protection.
+- SQL injection prevention.
+- Secure file upload.
+- Audit logging.
+- Backup and recovery.
+- Data minimization.
+- Retention policies.
+- Consent management.
+- Secure error handling.
+
+Audit:
+- Login events.
+- Failed login attempts.
+- Record access.
+- Record modification.
+- Document access.
+- Data exports.
+- Consent changes.
+- AI recommendations.
+- Clinician decisions.
+- Administrative actions.
+
+Maintain immutable or tamper-evident audit records.
+
+Do not expose medical information in application logs or error messages.
+
+Do not hardcode credentials, API keys, or secrets.
+
+Provide a security and privacy implementation document.
+
+==================================================
+22. DATABASE ENTITIES
+==================================================
+
+Design a complete database schema including:
+
+- users
+- user_profiles
+- roles
+- permissions
+- organizations
+- organization_memberships
+- patients
+- caregivers
+- patient_relationships
+- consent_records
+- encounters
+- conditions
+- allergies
+- medications
+- medication_requests
+- medication_dispenses
+- medication_administrations
+- medication_statements
+- medication_reconciliations
+- laboratory_results
+- observations
+- medical_documents
+- document_extractions
+- care_plans
+- clinical_alerts
+- clinical_recommendations
+- clinical_decisions
+- clinical_rules
+- evidence_sources
+- appointments
+- notifications
+- audit_events
+- ai_interactions
+
+Use proper foreign keys, indexes, constraints, timestamps, and tenant isolation.
+
+Implement database migrations and seed scripts.
+
+Use synthetic sample data only.
+
+==================================================
+23. MVP DELIVERY STRATEGY
+==================================================
+
+Do not attempt to activate every high-risk clinical feature in the first release.
+
+Build in phases:
+
+PHASE A — FOUNDATION
+
+- Email authentication.
+- Email verification.
+- Password recovery.
+- User roles.
+- Consent management.
+- Patient identity.
+- Longitudinal record.
+- Medication reconciliation.
+- Allergy information.
+- Validated basic medication-safety rules.
+- Laboratory trends.
+- Clinician review.
+- Audit logs.
+
+PHASE B — ADVANCED SAFETY
+
+- Validated patient-specific dose support.
+- Antibiotic stewardship.
+- Chronic disease workflows.
+- Maternal and pediatric pathways.
+- Geriatric workflows.
+
+PHASE C — EXPANSION
+
+- Remote care.
+- Prevention.
+- Advanced monitoring.
+- Broader specialty workflows.
+- Healthcare organization integrations.
+- Population analytics.
+
+Keep unavailable features visibly marked as:
+Coming Soon / به‌زودی
+
+Do not present unfinished modules as clinically operational.
+
+==================================================
+24. REQUIRED UI PAGES
+==================================================
+
+Create all the following pages:
+
+PUBLIC:
+1. Landing page.
+2. Product overview.
+3. Features.
+4. About Nersika Health.
+5. Privacy policy.
+6. Terms of service.
+7. Contact.
+8. Login.
+9. Register.
+10. Email verification.
+11. Forgot password.
+12. Reset password.
+
+PATIENT:
+13. Patient dashboard.
+14. My health record.
+15. Medical timeline.
+16. My medications.
+17. My allergies.
+18. Laboratory results.
+19. My documents.
+20. My care plans.
+21. Appointments.
+22. Notifications.
+23. Profile and settings.
+24. Consent management.
+
+PHYSICIAN:
+25. Clinician dashboard.
+26. Patient directory.
+27. Patient detail.
+28. Clinical timeline.
+29. Medication reconciliation.
+30. Medication safety review.
+31. Allergy review.
+32. Laboratory review.
+33. Clinical decision support.
+34. Clinical recommendation details.
+35. Clinical encounter.
+36. Care plan management.
+
+PHARMACIST:
+37. Pharmacist dashboard.
+38. Medication review workspace.
+39. Drug interaction review.
+40. Therapeutic duplication review.
+41. Medication safety reports.
+
+ADMIN:
+42. Admin dashboard.
+43. User management.
+44. Organization management.
+45. Role and permission management.
+46. Audit logs.
+47. System settings.
+48. Security monitoring.
+49. Analytics and reports.
+
+All pages must be responsive and bilingual.
+
+==================================================
+25. SAMPLE DATA & DEMONSTRATION MODE
+==================================================
+
+Create a demonstration environment with clearly fictional patients.
+
+Use fictional names, dates, medications, laboratory values, and medical histories.
+
+Display a visible label:
+
+DEMO DATA — NOT FOR CLINICAL USE
+
+Persian:
+
+داده آزمایشی — غیرقابل استفاده برای تصمیم‌گیری بالینی
+
+Create different demo accounts for:
+- Patient
+- Physician
+- Pharmacist
+- Nurse
+- Administrator
+
+Never use real patient records in the demonstration environment.
+
+Do not use demo accounts as production authentication credentials.
+
+==================================================
+26. USER EXPERIENCE REQUIREMENTS
+==================================================
+
+Every form must include:
+- Proper labels.
+- Required field indicators.
+- Input validation.
+- Helpful error messages.
+- Loading states.
+- Success confirmation.
+- Cancel action.
+- Accessible keyboard navigation.
+
+Every table must include:
+- Search.
+- Sorting.
+- Pagination.
+- Empty states.
+- Loading states.
+- Appropriate mobile layout.
+
+Every dashboard must include meaningful content and useful actions.
+
+Do not create non-functional buttons.
+
+Do not create dead links.
+
+Do not use placeholder text such as Lorem Ipsum.
+
+Do not leave navigation items disconnected.
+
+Do not simulate successful saving when data has not actually been saved.
+
+==================================================
+27. QUALITY ASSURANCE & TESTING
+==================================================
+
+You must test the actual implementation.
+
+Perform:
+
+1. Build and compilation checks.
+2. TypeScript checks.
+3. Lint checks.
+4. Authentication tests.
+5. Registration tests.
+6. Email verification workflow tests.
+7. Password recovery tests.
+8. Role-based authorization tests.
+9. Database CRUD tests.
+10. Patient record access tests.
+11. Consent enforcement tests.
+12. File upload tests.
+13. Persian RTL layout tests.
+14. English LTR layout tests.
+15. Responsive layout tests.
+16. API error handling tests.
+17. Security tests.
+18. Audit logging tests.
+
+Test critical user journeys:
+
+Journey A:
+A new patient registers with email, verifies their account, logs in, and completes their profile.
+
+Journey B:
+A patient uploads a laboratory report and sees it in their medical document section.
+
+Journey C:
+An authorized physician accesses a patient record, reviews the timeline, and documents a clinical decision.
+
+Journey D:
+A physician reviews an alert, accepts or rejects a recommendation, and records a reason.
+
+Journey E:
+An unauthorized user attempts to access another patient's record and is denied.
+
+Journey F:
+A Persian user switches to English and then back to Persian without losing the session.
+
+Fix all identified critical errors before declaring the build complete.
+
+==================================================
+28. DEPLOYMENT & DELIVERABLES
+==================================================
+
+Prepare the project for deployment.
+
+Deliver:
+
+1. Complete frontend source code.
+2. Backend source code.
+3. Database schema.
+4. Database migrations.
+5. Authentication configuration.
+6. API documentation.
+7. Environment variable template.
+8. Demo seed data.
+9. Automated tests.
+10. README.
+11. Deployment instructions.
+12. Security documentation.
+13. Architecture overview.
+14. Known limitations.
+
+Create:
+- .env.example
+- README.md
+- Database migration files
+- Setup scripts
+- Test scripts
+
+Never include real secrets in source code.
+
+Provide clear instructions for configuring Firebase or the selected authentication provider.
+
+Provide instructions for obtaining and configuring the Gemini API key securely.
+
+Clearly distinguish:
+- Implemented and tested.
+- Implemented but not tested.
+- Prototype only.
+- Requires external configuration.
+- Requires clinical validation.
+- Future development.
+
+==================================================
+29. STRICT EXECUTION INSTRUCTIONS
+==================================================
+
+DO NOT respond with only a project plan.
+
+DO NOT stop after creating a landing page.
+
+DO NOT create only a static UI.
+
+DO NOT create a frontend-only simulation of authentication.
+
+DO NOT claim that a database, email service, or AI API is connected unless it actually works.
+
+DO NOT invent clinical evidence, medical references, or validated rules.
+
+DO NOT activate unsafe medical functions.
+
+Build the actual application step by step.
+
+Start by generating the complete project structure and design system.
+
+Then implement:
+1. Authentication.
+2. Database and user roles.
+3. Main application layout.
+4. Patient dashboard.
+5. Clinician dashboard.
+6. Longitudinal health records.
+7. Medication reconciliation.
+8. Medication safety architecture.
+9. Laboratory intelligence.
+10. Clinical review workflows.
+11. Administration.
+12. Bilingual support.
+13. Security.
+14. Testing.
+15. Deployment documentation.
+
+If an external service requires credentials or configuration, build the integration correctly, provide the exact configuration instructions, and clearly identify what remains disconnected.
+
+If the environment cannot implement the entire application in one generation, prioritize a fully working Phase A MVP and continue with the remaining modules in subsequent development steps.
+
+The final objective is a polished, secure, bilingual, scalable healthcare intelligence platform that can evolve from an MVP into an enterprise healthcare product.
+
+**PRODUCT NAME: NERSIKA HEALTH**
+
+**LANGUAGES: PERSIAN AND ENGLISH**
+
+**PRIMARY MARKET: IRAN**
+
+**ARCHITECTURE: GLOBAL-READY**
+
+**CORE PRINCIPLE: AI RECOMMENDS — AUTHORIZED CLINICIANS APPROVE.**
+
+Now begin building the actual application.
